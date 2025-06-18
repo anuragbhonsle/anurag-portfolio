@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface TypingAnimationProps {
   text: string;
@@ -10,7 +10,7 @@ interface TypingAnimationProps {
 export const TypingAnimation: React.FC<TypingAnimationProps> = ({ text, className }) => {
   const words = text.split(' ');
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
@@ -18,12 +18,12 @@ export const TypingAnimation: React.FC<TypingAnimationProps> = ({ text, classNam
     }),
   };
 
-  const child = {
+  const child: Variants = {
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 100,
       },
@@ -32,7 +32,7 @@ export const TypingAnimation: React.FC<TypingAnimationProps> = ({ text, classNam
       opacity: 0,
       x: 20,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         damping: 12,
         stiffness: 100,
       },
