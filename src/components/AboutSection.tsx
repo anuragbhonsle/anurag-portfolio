@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
@@ -17,16 +16,19 @@ const AboutSection = () => {
   const storyContent = (
     <>
       <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-        I'm a full-stack developer with a passion for creating web applications
-        that solve real-world problems. My journey in tech started with a
-        fascination for video games, which naturally evolved into an interest
-        in how they were made. This curiosity led me to explore programming,
-        and I've been hooked ever since.
+        I’m a full-stack developer and MCA graduate with a passion for building
+        web applications that solve real-world problems. Currently working with
+        technologies like React, Node.js, and Express, I enjoy creating
+        scalable, secure, and user-focused solutions from front to back. I'm
+        also actively sharpening my skills in data structures and algorithms
+        using C++, and diving into backend development with a long-term goal of
+        stepping into the world of white-hat cybersecurity. With a mindset
+        focused on consistent learning and growth, I’m committed to leveling up
+        every day both as a developer and as a problem solver.
       </p>
       <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-        Over the years, I've honed my skills in various technologies, including
-        React, Node.js, and more. I enjoy the challenge of learning new things
-        and staying up-to-date with the latest trends in the industry.
+        Alongside web development, I’m also diving deep into DSA and backend
+        systems with a long-term vision of working in cybersecurity.
       </p>
     </>
   );
@@ -34,39 +36,41 @@ const AboutSection = () => {
   const experienceContent = (
     <>
       <h4 className="font-semibold text-gray-900 dark:text-white text-xl mb-2">
-        Software Engineer - Tech Company
+        Front-end Web Developer Intern
       </h4>
+      <h2 className="text-s text-gray-900 dark:text-white mb-2">
+        @Yhills - Remote (Mar 2024 – May 2024)
+      </h2>
+
       <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-        Developed and maintained web applications using React and Node.js.
-        Collaborated with cross-functional teams to deliver high-quality
-        software solutions.
-      </p>
-      <h4 className="font-semibold text-gray-900 dark:text-white text-xl mb-2">
-        Web Developer - Startup
-      </h4>
-      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-        Built responsive websites and web applications using modern web
-        technologies. Worked closely with designers and project managers to
-        meet client requirements.
+        We designed and built a responsive blog website using HTML, CSS, and
+        JavaScript. The project involved creating interactive UI elements,
+        implementing dynamic post rendering, and ensuring a clean,
+        mobile-friendly layout. I also practiced writing modular JavaScript and
+        used Git for version control throughout the development process.
       </p>
     </>
   );
 
   const educationContent = (
     <>
-      <h4 className="font-semibold text-gray-900 dark:text-white text-xl mb-2">
-        Bachelor of Science in Computer Science - University
+      <h4 className="font-semibold text-gray-900 dark:text-white text-xl mb-1">
+        BSc Computer Science
       </h4>
-      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-        Graduated with honors, focusing on software engineering and web
-        development.
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
+        Savitribai Phule Pune University (2020–2023)
       </p>
-      <h4 className="font-semibold text-gray-900 dark:text-white text-xl mb-2">
-        Online Courses and Certifications
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+        8.59 CGPA
+      </p>
+      <h4 className="font-semibold text-gray-900 dark:text-white text-xl mb-1">
+        MCA
       </h4>
       <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-        Completed various online courses and certifications in web development,
-        including React, Node.js, and more.
+        Savitribai Phule Pune University (2023–2025)
+      </p>
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+        7.55 CGPA
       </p>
     </>
   );
@@ -99,7 +103,10 @@ const AboutSection = () => {
   );
 
   return (
-    <section id="about" className="py-24 bg-gray-50 dark:bg-black border-b border-gray-200 dark:border-gray-800">
+    <section
+      id="about"
+      className="py-24 bg-gray-50 dark:bg-black border-b border-gray-200 dark:border-gray-800"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -125,7 +132,7 @@ const AboutSection = () => {
                 viewport={{ once: true }}
                 className="text-3xl lg:text-4xl font-bold text-black dark:text-white"
               >
-                Gamer by ❤️, Developer by Default
+                Writing code that solves problems — and makes it look easy.
               </motion.h3>
 
               {/* Tab Navigation */}
@@ -136,10 +143,10 @@ const AboutSection = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
                       activeTab === tab.id
-                        ? 'bg-blue-500 text-white'
-                        : theme === 'dark'
-                        ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:text-black'
+                        ? "bg-blue-500 text-white"
+                        : theme === "dark"
+                        ? "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white"
+                        : "bg-gray-200 text-gray-700 hover:bg-gray-300 hover:text-black"
                     }`}
                   >
                     {tab.label}
@@ -172,7 +179,7 @@ const AboutSection = () => {
             >
               <div className="relative h-96 lg:h-[500px] overflow-hidden rounded-2xl shadow-2xl">
                 <img
-                  src="/api/placeholder/400/500"
+                  src="https://i.pinimg.com/originals/16/69/e5/1669e57761ccc67fa5e31a09a54764d0.gif"
                   alt="Anurag"
                   className="w-full h-full object-cover"
                 />

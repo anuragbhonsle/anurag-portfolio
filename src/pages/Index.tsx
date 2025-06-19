@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -68,12 +67,12 @@ const Index = () => {
 
                 <div className="space-y-6">
                   <TypingAnimation
-                    text="I design robust user interfaces, solve complex algorithmic problems, and build secure systems with a focus on excellence and innovation."
+                    text="I design clean user interfaces, solve challenging problems, and build secure systems — always aiming for quality and innovation."
                     className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed"
                   />
                   <p className="text-lg text-gray-500 dark:text-gray-400">
-                    Building secure, scalable web applications with modern
-                    technologies
+                    Crafting scalable web solutions powered by the latest in
+                    modern web technologies
                   </p>
                 </div>
 
@@ -94,7 +93,9 @@ const Index = () => {
                     </DialogTrigger>
                     <DialogContent className="max-w-2xl bg-white dark:bg-black">
                       <DialogHeader>
-                        <DialogTitle className="text-gray-900 dark:text-white">Contact</DialogTitle>
+                        <DialogTitle className="text-gray-900 dark:text-white">
+                          Contact
+                        </DialogTitle>
                       </DialogHeader>
                       <ContactForm />
                     </DialogContent>

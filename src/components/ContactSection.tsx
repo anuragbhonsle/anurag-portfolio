@@ -1,23 +1,23 @@
-
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+import { Twitter as XIcon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 
 const ContactSection = () => {
   const { theme } = useTheme();
-  
+
   const contactMethods = [
     {
       label: "Email",
-      value: "anurag.b.2107@gmail.com",
-      href: "mailto:anurag.b.2107@gmail.com",
+      value: "anuragkbhonsle@gmail.com",
+      href: "mailto:anuragkbhonsle@gmail.com",
       icon: Mail,
     },
     {
       label: "LinkedIn",
       value: "linkedin.com/in/anuragbhonsle",
-      href: "https://linkedin.com/in/anuragbhonsle",
+      href: "https://www.linkedin.com/in/anurag-bhonsle-4b576524a/",
       icon: Linkedin,
     },
     {
@@ -25,6 +25,12 @@ const ContactSection = () => {
       value: "github.com/anuragbhonsle",
       href: "https://github.com/anuragbhonsle",
       icon: Github,
+    },
+    {
+      label: "X",
+      value: "@Anuraaaag7",
+      href: "https://x.com/Anuraaaag7",
+      icon: Twitter, // or XIcon if you have one
     },
   ];
 
@@ -44,7 +50,8 @@ const ContactSection = () => {
             </h2>
             <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full mb-6"></div>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Ready to collaborate? Let's connect and build something amazing together.
+              Ready to collaborate? Let's connect and build something amazing
+              together.
             </p>
           </motion.div>
 
@@ -61,17 +68,19 @@ const ContactSection = () => {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
                 className={`group p-8 rounded-2xl shadow-lg transition-all duration-300 ${
-                  theme === 'dark'
-                    ? 'bg-black border border-gray-800 hover:bg-gray-900'
-                    : 'bg-white border border-gray-200 hover:bg-gray-50 hover:shadow-xl'
+                  theme === "dark"
+                    ? "bg-black border border-gray-800 hover:bg-gray-900"
+                    : "bg-white border border-gray-200 hover:bg-gray-50 hover:shadow-xl"
                 }`}
               >
                 <div className="flex items-center space-x-4">
-                  <div className={`p-4 rounded-2xl transition-colors duration-300 ${
-                    theme === 'dark'
-                      ? 'bg-blue-500/20 group-hover:bg-blue-500/30'
-                      : 'bg-blue-500/10 group-hover:bg-blue-500/20'
-                  }`}>
+                  <div
+                    className={`p-4 rounded-2xl transition-colors duration-300 ${
+                      theme === "dark"
+                        ? "bg-blue-500/20 group-hover:bg-blue-500/30"
+                        : "bg-blue-500/10 group-hover:bg-blue-500/20"
+                    }`}
+                  >
                     <method.icon className="w-8 h-8 text-blue-500" />
                   </div>
                   <div>

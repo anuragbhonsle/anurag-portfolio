@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
@@ -127,11 +126,23 @@ const ProjectSection = () => {
       liveLink: "https://anime-verse-xi.vercel.app/",
       githubLink: "https://github.com/anuragbhonsle",
     },
+    {
+      title: "Eclipz",
+      description:
+        "A privacy-focused anonymous messaging platform using Firebase for backend services. Supports Google Sign-In with Firebase Authentication, real-time Firestore database for message storage, and responsive frontend built with React and Tailwind CSS. Prioritizes user simplicity, data privacy, and clean UI across devices.",
+      image: "ecz.png",
+      tech: ["React.js", "Node.js", "Firebase", "Express.js", "Tailwind CSS"],
+      liveLink: "https://unseen-eclipz-stream.vercel.app/",
+      githubLink: "https://github.com/anuragbhonsle",
+    },
     // Add more projects here as needed
   ];
 
   return (
-    <section id="work" className="py-24 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800">
+    <section
+      id="work"
+      className="py-24 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div

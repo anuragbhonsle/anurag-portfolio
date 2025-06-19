@@ -1,28 +1,29 @@
-
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Mail, Send } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useToast } from '@/hooks/use-toast';
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Mail, Send } from "lucide-react";
+import { motion } from "framer-motion";
+import { useToast } from "@/hooks/use-toast";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -31,22 +32,26 @@ export const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const mailtoLink = `mailto:anuragkbhonsle@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      const mailtoLink = `mailto:anuragkbhonsle@gmail.com?subject=${encodeURIComponent(
+        formData.subject
+      )}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       )}`;
-      
+
       window.location.href = mailtoLink;
-      
+
       toast({
         title: "Email client opened!",
-        description: "Your default email client should open with the message pre-filled.",
+        description:
+          "Your default email client should open with the message pre-filled.",
       });
-      
-      setFormData({ name: '', email: '', subject: '', message: '' });
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
       toast({
         title: "Something went wrong",
-        description: "Please try again or email me directly at anuragkbhonsle@gmail.com",
+        description:
+          "Please try again or email me directly at anuragkbhonsle@gmail.com",
         variant: "destructive",
       });
     } finally {
@@ -119,7 +124,7 @@ export const ContactForm = () => {
             </div>
             <Button type="submit" disabled={isSubmitting} className="w-full">
               <Send className="w-4 h-4 mr-2" />
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>
         </CardContent>
