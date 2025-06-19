@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Mail, ArrowRight } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { TypingAnimation } from "@/components/TypingAnimation";
 import { ContactForm } from "@/components/ContactForm";
 import Navigation from "@/components/Navigation";
@@ -28,9 +28,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
       <Navigation />
-      <ThemeToggle />
 
       {/* Hero Section */}
       <motion.section
@@ -41,7 +40,7 @@ const Index = () => {
         transition={{ duration: 0.8 }}
       >
         {/* Subtle background pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-gray-900 dark:to-black"></div>
         <div
           className="absolute inset-0"
           style={{
@@ -51,8 +50,8 @@ const Index = () => {
         ></div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Content */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
@@ -61,8 +60,9 @@ const Index = () => {
                 className="space-y-8"
               >
                 <div className="space-y-4">
-                  <h1 className="text-4xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
-                    Hey I'm Anurag Bhonsle
+                  <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
+                    Hey I'm{" "}
+                    <span className="whitespace-nowrap">Anurag Bhonsle</span>
                   </h1>
                 </div>
 
@@ -92,9 +92,9 @@ const Index = () => {
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-2xl">
+                    <DialogContent className="max-w-2xl bg-white dark:bg-black">
                       <DialogHeader>
-                        <DialogTitle>Contact</DialogTitle>
+                        <DialogTitle className="text-gray-900 dark:text-white">Contact</DialogTitle>
                       </DialogHeader>
                       <ContactForm />
                     </DialogContent>
@@ -102,7 +102,7 @@ const Index = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-gray-300 hover:border-gray-400 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300"
+                    className="border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-300"
                     onClick={handleViewWork}
                   >
                     View Work
@@ -110,20 +110,20 @@ const Index = () => {
                 </div>
               </motion.div>
 
-              {/* Visual Element - Anime-style placeholder */}
+              {/* Visual Element - Bigger and Better Cover */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="relative"
               >
-                <div className="relative w-80 h-80 mx-auto">
+                <div className="relative w-96 h-96 mx-auto">
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700 rounded-3xl transform rotate-6 shadow-2xl"></div>
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-600 rounded-3xl transform -rotate-3 shadow-xl"></div>
-                  <div className="relative bg-white dark:bg-gray-900 rounded-3xl p-4 flex items-center justify-center shadow-2xl overflow-hidden">
+                  <div className="relative bg-white dark:bg-gray-900 rounded-3xl p-6 flex items-center justify-center shadow-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700">
                     <img
-                      src="public\anurag.png"
-                      alt="Anime style placeholder"
+                      src="/anurag.png"
+                      alt="Anurag Bhonsle"
                       className="w-full h-full object-cover rounded-2xl"
                     />
                   </div>
