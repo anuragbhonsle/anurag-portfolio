@@ -1,9 +1,12 @@
+
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "./ThemeProvider";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme } = useTheme();
 
   const navItems = [
     { id: "home", label: "Home" },
@@ -46,7 +49,9 @@ const Navigation = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg"
+          ? theme === 'dark' 
+            ? "bg-black/95 backdrop-blur-md shadow-lg border-b border-gray-800" 
+            : "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
           : "bg-transparent"
       }`}
     >
@@ -54,7 +59,9 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-xl font-bold text-gray-900 dark:text-white cursor-pointer"
+            className={`text-xl font-bold cursor-pointer transition-colors ${
+              theme === 'dark' ? 'text-white' : 'text-black'
+            }`}
             onClick={() => scrollToSection("home")}
           >
             ANURAG
@@ -65,17 +72,19 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                className={`relative px-3 py-2 text-sm font-medium transition-all duration-200 ${
                   activeSection === item.id
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                    ? "text-blue-500"
+                    : theme === 'dark'
+                    ? "text-gray-300 hover:text-white"
+                    : "text-gray-600 hover:text-black"
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-500"
                   />
                 )}
               </button>
