@@ -179,7 +179,7 @@ const AboutSection = () => {
             >
               <div className="relative h-96 lg:h-[500px] overflow-hidden rounded-2xl shadow-2xl">
                 <img
-                  src="https://i.pinimg.com/originals/16/69/e5/1669e57761ccc67fa5e31a09a54764d0.gif"
+                  src="https://i.pinimg.com/originals/36/51/26/365126a63911723046e0ef2ae1e249ff.gif"
                   alt="Anurag"
                   className="w-full h-full object-cover"
                 />
