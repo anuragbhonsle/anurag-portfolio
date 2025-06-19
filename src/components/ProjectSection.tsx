@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
@@ -130,7 +131,7 @@ const ProjectSection = () => {
   ];
 
   return (
-    <section id="work" className="py-24 bg-white dark:bg-gray-900">
+    <section id="work" className="py-24 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div

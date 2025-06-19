@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
@@ -98,7 +99,7 @@ const AboutSection = () => {
   );
 
   return (
-    <section id="about" className="py-24 bg-gray-50 dark:bg-black">
+    <section id="about" className="py-24 bg-gray-50 dark:bg-black border-b border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -135,9 +136,7 @@ const AboutSection = () => {
                     onClick={() => setActiveTab(tab.id)}
                     className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
                       activeTab === tab.id
-                        ? theme === 'dark'
-                          ? 'bg-blue-500 text-black'
-                          : 'bg-blue-500 text-white'
+                        ? 'bg-blue-500 text-white'
                         : theme === 'dark'
                         ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
                         : 'bg-gray-200 text-gray-700 hover:bg-gray-300 hover:text-black'
@@ -154,7 +153,7 @@ const AboutSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800"
+                className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800"
               >
                 {activeTab === "story" && storyContent}
                 {activeTab === "experience" && experienceContent}

@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github } from "lucide-react";
@@ -28,7 +29,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-black">
+    <section id="contact" className="py-24 bg-gray-50 dark:bg-black">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -61,8 +62,8 @@ const ContactSection = () => {
                 whileHover={{ scale: 1.02, y: -5 }}
                 className={`group p-8 rounded-2xl shadow-lg transition-all duration-300 ${
                   theme === 'dark'
-                    ? 'bg-gray-900 border border-gray-800 hover:bg-gray-800'
-                    : 'bg-gray-50 border border-gray-200 hover:bg-white hover:shadow-xl'
+                    ? 'bg-black border border-gray-800 hover:bg-gray-900'
+                    : 'bg-white border border-gray-200 hover:bg-gray-50 hover:shadow-xl'
                 }`}
               >
                 <div className="flex items-center space-x-4">

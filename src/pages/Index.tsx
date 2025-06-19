@@ -34,13 +34,13 @@ const Index = () => {
       {/* Hero Section */}
       <motion.section
         id="home"
-        className="relative overflow-hidden min-h-screen flex items-center pt-16"
+        className="relative overflow-hidden min-h-screen flex items-center pt-16 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         {/* Subtle background pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-gray-900 dark:to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-black dark:to-black"></div>
         <div
           className="absolute inset-0"
           style={{
