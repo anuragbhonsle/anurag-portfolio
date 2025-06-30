@@ -70,7 +70,7 @@ const AboutSection = () => {
         Savitribai Phule Pune University (2023–2025)
       </p>
       <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-        7.55 CGPA
+        7.62 CGPA
       </p>
     </>
   );
