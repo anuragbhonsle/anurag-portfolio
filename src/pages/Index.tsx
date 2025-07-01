@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -63,7 +62,7 @@ const Index = () => {
                 {/* Description card */}
                 <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800">
                   <TypingAnimation
-                    text="Building scalable web applications with modern technologies. Passionate about clean code, user experience, and solving complex problems."
+                    text="I build fast, scalable web apps with a focus on clean code and seamless user experiences. I love turning complex problems into elegant, working solutions."
                     className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
                   />
                 </div>
@@ -92,7 +91,7 @@ const Index = () => {
                       <ContactForm />
                     </DialogContent>
                   </Dialog>
-                  
+
                   <Button
                     variant="outline"
                     size="lg"

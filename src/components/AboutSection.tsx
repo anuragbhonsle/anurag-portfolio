@@ -129,7 +129,7 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl lg:text-4xl font-light text-gray-900 dark:text-white mb-2">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               About Me
             </h2>
             <div className="w-16 h-px bg-blue-500 mx-auto"></div>
