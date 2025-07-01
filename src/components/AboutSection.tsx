@@ -118,7 +118,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="py-16 bg-gray-50 dark:bg-black border-t border-gray-200 dark:border-gray-800"
+      className="py-24 bg-white dark:bg-black border-y border-gray-300 dark:border-gray-700 shadow-sm"
     >
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
