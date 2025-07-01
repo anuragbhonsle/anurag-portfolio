@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -8,7 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Mail, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight, Download } from "lucide-react";
 import { TypingAnimation } from "@/components/TypingAnimation";
 import { ContactForm } from "@/components/ContactForm";
 import Navigation from "@/components/Navigation";
@@ -27,55 +28,47 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
+    <div className="min-h-screen bg-gray-50 dark:bg-black transition-colors duration-300">
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Hero Section - Anki-inspired clean design */}
       <motion.section
         id="home"
-        className="relative overflow-hidden min-h-screen flex items-center pt-16 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800"
+        className="relative overflow-hidden min-h-screen flex items-center pt-16 bg-white dark:bg-black"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-black dark:via-black dark:to-black"></div>
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), 
-                           radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.05) 0%, transparent 50%)`,
-          }}
-        ></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              {/* Content */}
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-5 gap-12 items-center">
+              {/* Content - 3 columns */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="space-y-8"
+                className="lg:col-span-3 space-y-8"
               >
-                <div className="space-y-4">
-                  <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white leading-tight">
-                    Hey I'm{" "}
-                    <span className="whitespace-nowrap">Anurag Bhonsle</span>
+                {/* Clean header card */}
+                <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800">
+                  <h1 className="text-4xl lg:text-5xl xl:text-6xl font-light text-gray-900 dark:text-white leading-tight mb-4">
+                    Anurag Bhonsle
                   </h1>
-                </div>
-
-                <div className="space-y-6">
-                  <TypingAnimation
-                    text="I design clean user interfaces, solve challenging problems, and build secure systems — always aiming for quality and innovation."
-                    className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed"
-                  />
-                  <p className="text-lg text-gray-500 dark:text-gray-400">
-                    Crafting scalable web solutions powered by the latest in
-                    modern web technologies
+                  <div className="h-px bg-gradient-to-r from-blue-500 to-transparent mb-6"></div>
+                  <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed">
+                    Full-Stack Developer & Problem Solver
                   </p>
                 </div>
 
+                {/* Description card */}
+                <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800">
+                  <TypingAnimation
+                    text="Building scalable web applications with modern technologies. Passionate about clean code, user experience, and solving complex problems."
+                    className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
+                  />
+                </div>
+
+                {/* Action buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Dialog
                     open={showContactForm}
@@ -84,14 +77,13 @@ const Index = () => {
                     <DialogTrigger asChild>
                       <Button
                         size="lg"
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md shadow-sm transition-all duration-200 font-medium"
                       >
-                        <Mail className="w-5 h-5 mr-2" />
+                        <Mail className="w-4 h-4 mr-2" />
                         Get In Touch
-                        <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-2xl bg-white dark:bg-black">
+                    <DialogContent className="max-w-2xl bg-white dark:bg-gray-900">
                       <DialogHeader>
                         <DialogTitle className="text-gray-900 dark:text-white">
                           Contact
@@ -100,33 +92,38 @@ const Index = () => {
                       <ContactForm />
                     </DialogContent>
                   </Dialog>
+                  
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-900 transition-all duration-300"
+                    className="border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-200 font-medium"
                     onClick={handleViewWork}
                   >
-                    View Work
+                    View Projects
+                    <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </div>
               </motion.div>
 
-              {/* Visual Element - Bigger and Better Cover */}
+              {/* Profile Image - 2 columns */}
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="relative"
+                className="lg:col-span-2 relative"
               >
-                <div className="relative w-96 h-96 mx-auto">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-700 rounded-3xl transform rotate-6 shadow-2xl"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-600 rounded-3xl transform -rotate-3 shadow-xl"></div>
-                  <div className="relative bg-white dark:bg-gray-900 rounded-3xl p-6 flex items-center justify-center shadow-2xl overflow-hidden border-4 border-gray-200 dark:border-gray-700">
+                <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800">
+                  <div className="aspect-square overflow-hidden rounded-md">
                     <img
                       src="/anurag.png"
                       alt="Anurag Bhonsle"
-                      className="w-full h-full object-cover rounded-2xl"
+                      className="w-full h-full object-cover"
                     />
+                  </div>
+                  <div className="mt-4 text-center">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 font-light">
+                      Full-Stack Developer
+                    </p>
                   </div>
                 </div>
               </motion.div>

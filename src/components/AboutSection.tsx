@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
@@ -8,96 +9,107 @@ const AboutSection = () => {
 
   const tabs = [
     { id: "story", label: "My Story" },
-    { id: "experience", label: "My Experience" },
+    { id: "experience", label: "Experience" },
     { id: "education", label: "Education" },
     { id: "skills", label: "Skills" },
   ];
 
   const storyContent = (
-    <>
-      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-        I’m a full-stack developer and MCA graduate with a passion for building
+    <div className="space-y-4">
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
+        I'm a full-stack developer and MCA graduate with a passion for building
         web applications that solve real-world problems. Currently working with
         technologies like React, Node.js, and Express, I enjoy creating
-        scalable, secure, and user-focused solutions from front to back. I'm
-        also actively sharpening my skills in data structures and algorithms
+        scalable, secure, and user-focused solutions from front to back.
+      </p>
+      <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
+        I'm also actively sharpening my skills in data structures and algorithms
         using C++, and diving into backend development with a long-term goal of
         stepping into the world of white-hat cybersecurity. With a mindset
-        focused on consistent learning and growth, I’m committed to leveling up
+        focused on consistent learning and growth, I'm committed to leveling up
         every day both as a developer and as a problem solver.
       </p>
-      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-        Alongside web development, I’m also diving deep into DSA and backend
-        systems with a long-term vision of working in cybersecurity.
-      </p>
-    </>
+    </div>
   );
 
   const experienceContent = (
-    <>
-      <h4 className="font-semibold text-gray-900 dark:text-white text-xl mb-2">
-        Front-end Web Developer Intern
-      </h4>
-      <h2 className="text-s text-gray-900 dark:text-white mb-2">
-        @Yhills - Remote (Mar 2024 – May 2024)
-      </h2>
-
-      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-        We designed and built a responsive blog website using HTML, CSS, and
-        JavaScript. The project involved creating interactive UI elements,
-        implementing dynamic post rendering, and ensuring a clean,
-        mobile-friendly layout. I also practiced writing modular JavaScript and
-        used Git for version control throughout the development process.
-      </p>
-    </>
+    <div className="space-y-4">
+      <div className="border-l-2 border-blue-500 pl-4">
+        <h4 className="font-medium text-gray-900 dark:text-white text-lg mb-1">
+          Front-end Web Developer Intern
+        </h4>
+        <p className="text-sm text-blue-600 dark:text-blue-400 mb-2">
+          @Yhills - Remote (Mar 2024 – May 2024)
+        </p>
+        <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
+          Designed and built a responsive blog website using HTML, CSS, and
+          JavaScript. The project involved creating interactive UI elements,
+          implementing dynamic post rendering, and ensuring a clean,
+          mobile-friendly layout. I also practiced writing modular JavaScript and
+          used Git for version control throughout the development process.
+        </p>
+      </div>
+    </div>
   );
 
   const educationContent = (
-    <>
-      <h4 className="font-semibold text-gray-900 dark:text-white text-xl mb-1">
-        BSc Computer Science
-      </h4>
-      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
-        Savitribai Phule Pune University (2020–2023)
-      </p>
-      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-        8.59 CGPA
-      </p>
-      <h4 className="font-semibold text-gray-900 dark:text-white text-xl mb-1">
-        MCA
-      </h4>
-      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-        Savitribai Phule Pune University (2023–2025)
-      </p>
-      <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-        7.62 CGPA
-      </p>
-    </>
+    <div className="space-y-6">
+      <div className="border border-gray-200 dark:border-gray-700 rounded-md p-4">
+        <h4 className="font-medium text-gray-900 dark:text-white text-lg mb-1">
+          Master of Computer Applications (MCA)
+        </h4>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+          Savitribai Phule Pune University (2023–2025)
+        </p>
+        <p className="text-blue-600 dark:text-blue-400 font-medium">
+          CGPA: 7.62
+        </p>
+      </div>
+      <div className="border border-gray-200 dark:border-gray-700 rounded-md p-4">
+        <h4 className="font-medium text-gray-900 dark:text-white text-lg mb-1">
+          Bachelor of Computer Science (BSc)
+        </h4>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
+          Savitribai Phule Pune University (2020–2023)
+        </p>
+        <p className="text-blue-600 dark:text-blue-400 font-medium">
+          CGPA: 8.59
+        </p>
+      </div>
+    </div>
   );
 
   const skillsContent = (
-    <div className="grid grid-cols-2 gap-4">
-      <div>
-        <h4 className="font-semibold text-gray-900 dark:text-white text-lg mb-2">
-          Frontend
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="border border-gray-200 dark:border-gray-700 rounded-md p-4">
+        <h4 className="font-medium text-gray-900 dark:text-white text-lg mb-3">
+          Frontend Technologies
         </h4>
-        <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
-          <li>React</li>
-          <li>JavaScript</li>
-          <li>HTML</li>
-          <li>CSS</li>
-        </ul>
+        <div className="flex flex-wrap gap-2">
+          {["React", "JavaScript", "HTML", "CSS", "Tailwind CSS"].map((skill) => (
+            <span
+              key={skill}
+              className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-sm rounded-full"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
-      <div>
-        <h4 className="font-semibold text-gray-900 dark:text-white text-lg mb-2">
-          Backend
+      <div className="border border-gray-200 dark:border-gray-700 rounded-md p-4">
+        <h4 className="font-medium text-gray-900 dark:text-white text-lg mb-3">
+          Backend Technologies
         </h4>
-        <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
-          <li>Node.js</li>
-          <li>Express</li>
-          <li>SQL</li>
-          <li>NoSQL</li>
-        </ul>
+        <div className="flex flex-wrap gap-2">
+          {["Node.js", "Express", "SQL", "NoSQL", "C++"].map((skill) => (
+            <span
+              key={skill}
+              className="px-3 py-1 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 text-sm rounded-full"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -105,90 +117,71 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="py-24 bg-gray-50 dark:bg-black border-b border-gray-200 dark:border-gray-800"
+      className="py-16 bg-gray-50 dark:bg-black border-t border-gray-200 dark:border-gray-800"
     >
-      <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-black dark:text-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-light text-gray-900 dark:text-white mb-2">
               About Me
             </h2>
-            <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+            <div className="w-16 h-px bg-blue-500 mx-auto"></div>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Left side - Content */}
-            <div className="space-y-8">
-              <motion.h3
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="text-3xl lg:text-4xl font-bold text-black dark:text-white"
-              >
-                Writing code that solves problems — and makes it look easy.
-              </motion.h3>
-
-              {/* Tab Navigation */}
-              <div className="flex flex-wrap gap-2">
-                {tabs.map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                      activeTab === tab.id
-                        ? "bg-blue-500 text-white"
-                        : theme === "dark"
-                        ? "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white"
-                        : "bg-gray-200 text-gray-700 hover:bg-gray-300 hover:text-black"
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Tab Navigation - Card Style */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="lg:col-span-1"
+            >
+              <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 p-4">
+                <div className="space-y-2">
+                  {tabs.map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveTab(tab.id)}
+                      className={`w-full text-left px-4 py-3 rounded-md font-medium transition-all duration-200 ${
+                        activeTab === tab.id
+                          ? "bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-l-2 border-blue-500"
+                          : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
               </div>
+            </motion.div>
 
-              {/* Tab Content */}
+            {/* Tab Content - Card Style */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="lg:col-span-2"
+            >
               <motion.div
                 key={activeTab}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-800"
+                className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 min-h-[400px]"
               >
                 {activeTab === "story" && storyContent}
                 {activeTab === "experience" && experienceContent}
                 {activeTab === "education" && educationContent}
                 {activeTab === "skills" && skillsContent}
               </motion.div>
-            </div>
-
-            {/* Right side - Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="relative h-96 lg:h-[500px] overflow-hidden rounded-2xl shadow-2xl">
-                <img
-                  src="https://i.pinimg.com/originals/36/51/26/365126a63911723046e0ef2ae1e249ff.gif"
-                  alt="Anurag"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-32 h-32 bg-blue-500/10 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-500/20 rounded-full blur-lg"></div>
             </motion.div>
           </div>
         </div>
