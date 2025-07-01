@@ -67,7 +67,7 @@ const AboutSection = () => {
       </div>
       <div className="border border-gray-200 dark:border-gray-700 rounded-md p-4">
         <h4 className="font-medium text-gray-900 dark:text-white text-lg mb-1">
-          Bachelor of Computer Science (BSc)
+          Bachelor of Science in Computer Science
         </h4>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
           Savitribai Phule Pune University (2020–2023)
