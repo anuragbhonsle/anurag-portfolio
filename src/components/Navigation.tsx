@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
@@ -44,7 +43,7 @@ const Navigation = () => {
   };
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
@@ -53,10 +52,12 @@ const Navigation = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? theme === 'dark' 
-            ? "bg-black/95 backdrop-blur-md shadow-lg border-b border-gray-800" 
+          ? theme === "dark"
+            ? "bg-black/95 backdrop-blur-md shadow-lg border-b border-gray-800"
             : "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
-          : "bg-transparent"
+          : theme === "dark"
+          ? "bg-transparent border-b border-gray-800"
+          : "bg-transparent border-b border-gray-200"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -64,7 +65,7 @@ const Navigation = () => {
           <motion.div
             whileHover={{ scale: 1.05 }}
             className={`text-xl font-bold cursor-pointer transition-colors ${
-              theme === 'dark' ? 'text-white' : 'text-black'
+              theme === "dark" ? "text-white" : "text-black"
             }`}
             onClick={() => scrollToSection("home")}
           >
@@ -79,7 +80,7 @@ const Navigation = () => {
                 className={`relative px-3 py-2 text-sm font-medium transition-all duration-200 ${
                   activeSection === item.id
                     ? "text-blue-500"
-                    : theme === 'dark'
+                    : theme === "dark"
                     ? "text-gray-300 hover:text-white"
                     : "text-gray-600 hover:text-black"
                 }`}
@@ -93,17 +94,17 @@ const Navigation = () => {
                 )}
               </button>
             ))}
-            
+
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
               className={`relative px-3 py-2 text-sm font-medium transition-all duration-200 ${
-                theme === 'dark'
-                ? "text-gray-300 hover:text-white"
-                : "text-gray-600 hover:text-black"
+                theme === "dark"
+                  ? "text-gray-300 hover:text-white"
+                  : "text-gray-600 hover:text-black"
               }`}
             >
-              {theme === 'light' ? 'Light' : 'Dark'}
+              {theme === "light" ? "Light" : "Dark"}
             </button>
           </div>
         </div>
