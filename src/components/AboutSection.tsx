@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
@@ -25,9 +24,9 @@ const AboutSection = () => {
       <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
         I'm also actively sharpening my skills in data structures and algorithms
         using C++, and diving into backend development with a long-term goal of
-        stepping into the world of white-hat cybersecurity. With a mindset
-        focused on consistent learning and growth, I'm committed to leveling up
-        every day both as a developer and as a problem solver.
+        stepping into the world of cybersecurity. With a mindset focused on
+        consistent learning and growth, I'm committed to leveling up every day
+        both as a developer and as a problem solver.
       </p>
     </div>
   );
@@ -45,8 +44,8 @@ const AboutSection = () => {
           Designed and built a responsive blog website using HTML, CSS, and
           JavaScript. The project involved creating interactive UI elements,
           implementing dynamic post rendering, and ensuring a clean,
-          mobile-friendly layout. I also practiced writing modular JavaScript and
-          used Git for version control throughout the development process.
+          mobile-friendly layout. I also practiced writing modular JavaScript
+          and used Git for version control throughout the development process.
         </p>
       </div>
     </div>
@@ -86,14 +85,16 @@ const AboutSection = () => {
           Frontend Technologies
         </h4>
         <div className="flex flex-wrap gap-2">
-          {["React", "JavaScript", "HTML", "CSS", "Tailwind CSS"].map((skill) => (
-            <span
-              key={skill}
-              className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-sm rounded-full"
-            >
-              {skill}
-            </span>
-          ))}
+          {["React", "JavaScript", "HTML", "CSS", "Tailwind CSS"].map(
+            (skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-sm rounded-full"
+              >
+                {skill}
+              </span>
+            )
+          )}
         </div>
       </div>
       <div className="border border-gray-200 dark:border-gray-700 rounded-md p-4">
