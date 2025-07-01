@@ -102,7 +102,7 @@ const AboutSection = () => {
           Backend Technologies
         </h4>
         <div className="flex flex-wrap gap-2">
-          {["Node.js", "Express", "SQL", "NoSQL", "C++"].map((skill) => (
+          {["Node.js", "Express", "SQL", "NoSQL"].map((skill) => (
             <span
               key={skill}
               className="px-3 py-1 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 text-sm rounded-full"
